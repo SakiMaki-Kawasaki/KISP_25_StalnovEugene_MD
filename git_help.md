@@ -1,4 +1,4 @@
-# KISP_25_Habibilloev_MD
+# KISP_25_Stalnov_MD
 курс: Разработка мобильных приложений (очное) для группы КИСП-25
 
 <!-- https://github.com/ -->
