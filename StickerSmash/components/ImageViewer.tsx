@@ -1,15 +1,26 @@
-import { StyleSheet } from 'react-native';
-import { Image, type ImageSource } from 'expo-image';
+import { StyleSheet, View, Image, ImageStyle } from 'react-native';
 
 type Props = {
-  imgSource: ImageSource;
+  imgSource: number;
+  selectedImage?: string;
+  style?: ImageStyle;
 };
 
-export default function ImageViewer({ imgSource }: Props) {
-  return <Image source={imgSource} style={styles.image} />;
+export default function ImageViewer({ imgSource, selectedImage, style }: Props) {
+  const imageSource = selectedImage ? { uri: selectedImage } : imgSource;
+
+  return (
+    <View style={styles.container}>
+      <Image source={imageSource} style={[styles.image, style]} resizeMode="contain" />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   image: {
     width: 320,
     height: 440,
